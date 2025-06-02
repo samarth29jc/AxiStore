@@ -15,7 +15,7 @@ function HomePage() {
       <section className="relative h-[80vh] bg-gray-900 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/5868722/pexels-photo-5868722.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+            src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1600" 
             alt="Fashion hero" 
             className="w-full h-full object-cover opacity-70"
           />
@@ -23,17 +23,17 @@ function HomePage() {
         <div className="relative container-custom h-full flex flex-col justify-center">
           <div className="max-w-lg">
             <h1 className="text-white mb-4 animate-slide-up">
-              Elevate Your Style
+              Discover Your Style
             </h1>
             <p className="text-gray-200 text-xl mb-8 animate-slide-up" style={{animationDelay: '0.1s'}}>
-              Discover our new collection of premium clothing designed for comfort and style.
+              Explore our curated collection of premium fashion for every occasion.
             </p>
             <div className="flex gap-4 animate-slide-up" style={{animationDelay: '0.2s'}}>
               <Link to="/products" className="btn-primary">
                 Shop Now
               </Link>
-              <Link to="/products/new" className="btn-secondary">
-                New Arrivals
+              <Link to="/about" className="btn-secondary">
+                Learn More
               </Link>
             </div>
           </div>
@@ -41,35 +41,42 @@ function HomePage() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Shop by Category</h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {categories.slice(0, 8).map((category) => (
-              <Link 
-                key={category.id}
-                to={`/products/${category.id}`}
-                className="group overflow-hidden rounded-lg shadow-md relative h-64"
-              >
-                {/* Category Image */}
-                <div className="absolute inset-0 bg-gray-900">
-                  <img 
-                    src={`https://images.pexels.com/photos/6311151/pexels-photo-6311151.jpeg?auto=compress&cs=tinysrgb&w=800`} 
-                    alt={category.name}
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-300 group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                
-                {/* Category Name */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center bg-white bg-opacity-90 px-4 py-2 rounded-md shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
-                    <h3 className="text-lg font-bold">{category.name}</h3>
-                    <p className="text-sm">{category.count} items</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          <h2 className="mb-8">Shop by Category</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link to="/products/men" className="group relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img 
+                src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Men's Collection"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 className="text-white text-2xl font-bold">Men's Collection</h3>
+              </div>
+            </Link>
+            
+            <Link to="/products/women" className="group relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img 
+                src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Women's Collection"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 className="text-white text-2xl font-bold">Women's Collection</h3>
+              </div>
+            </Link>
+            
+            <Link to="/products/accessories" className="group relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img 
+                src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Accessories"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 className="text-white text-2xl font-bold">Accessories</h3>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

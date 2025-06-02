@@ -136,13 +136,6 @@ function LoginPage() {
               </button>
             </div>
           </div>
-          
-          {/* Demo account info */}
-          <div className="mt-8 p-4 bg-gray-50 rounded-md text-sm text-gray-700">
-            <p className="font-medium mb-2">Demo Account:</p>
-            <p>Email: user@example.com</p>
-            <p>Password: password</p>
-          </div>
         </div>
       </div>
     </div>

@@ -66,52 +66,16 @@ function MobileMenu({ isOpen, onClose }) {
                 className="block px-4 py-3 text-lg text-gray-800 hover:bg-gray-100"
                 onClick={onClose}
               >
-                Shop All
-              </Link>
-            </li>
-            <li className="border-t">
-              <Link 
-                to="/products/tshirts"
-                className="block px-4 py-3 text-lg text-gray-800 hover:bg-gray-100"
-                onClick={onClose}
-              >
-                T-Shirts
+                Products
               </Link>
             </li>
             <li>
               <Link 
-                to="/products/pants"
+                to="/about"
                 className="block px-4 py-3 text-lg text-gray-800 hover:bg-gray-100"
                 onClick={onClose}
               >
-                Pants
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/products/sweaters"
-                className="block px-4 py-3 text-lg text-gray-800 hover:bg-gray-100"
-                onClick={onClose}
-              >
-                Sweaters
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/products/jackets"
-                className="block px-4 py-3 text-lg text-gray-800 hover:bg-gray-100"
-                onClick={onClose}
-              >
-                Jackets
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/products/dresses"
-                className="block px-4 py-3 text-lg text-gray-800 hover:bg-gray-100"
-                onClick={onClose}
-              >
-                Dresses
+                About Us
               </Link>
             </li>
             <li className="border-t">

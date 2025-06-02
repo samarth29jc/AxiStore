@@ -42,11 +42,8 @@ function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/products" className="nav-link">Shop All</Link>
-          <Link to="/products/tshirts" className="nav-link">T-Shirts</Link>
-          <Link to="/products/pants" className="nav-link">Pants</Link>
-          <Link to="/products/jackets" className="nav-link">Jackets</Link>
-          <Link to="/products/dresses" className="nav-link">Dresses</Link>
+          <Link to="/products" className="nav-link">Products</Link>
+          <Link to="/about" className="nav-link">About Us</Link>
         </nav>
 
         {/* Right Side Actions */}

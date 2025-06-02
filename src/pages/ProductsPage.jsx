@@ -272,33 +272,24 @@ function ProductsPage() {
         {/* Categories Filter */}
         <div>
           <h3 className="text-lg font-medium mb-3">Categories</h3>
-          <div className="space-y-2">
-            <div className="flex items-center">
-              <input
-                id="category-all"
-                type="radio"
-                checked={filters.category === 'all'}
-                onChange={() => handleFilterChange('category', 'all')}
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-              />
-              <label htmlFor="category-all" className="ml-2 text-gray-700">
-                All Products
-              </label>
-            </div>
-            {categories.map(cat => (
-              <div key={cat.id} className="flex items-center">
-                <input
-                  id={`category-${cat.id}`}
-                  type="radio"
-                  checked={filters.category === cat.id}
-                  onChange={() => handleFilterChange('category', cat.id)}
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                />
-                <label htmlFor={`category-${cat.id}`} className="ml-2 text-gray-700">
+          <div className="relative">
+            <select
+              value={filters.category}
+              onChange={(e) => handleFilterChange('category', e.target.value)}
+              className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="all">All Categories</option>
+              {categories.map(cat => (
+                <option key={cat.id} value={cat.id}>
                   {cat.name} ({cat.count})
-                </label>
-              </div>
-            ))}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
         </div>
         
@@ -341,21 +332,24 @@ function ProductsPage() {
         {/* Colors Filter */}
         <div>
           <h3 className="text-lg font-medium mb-3">Colors</h3>
-          <div className="space-y-2">
-            {allColors.map(color => (
-              <div key={color} className="flex items-center">
-                <input
-                  id={`color-${color}`}
-                  type="checkbox"
-                  checked={filters.colors.includes(color)}
-                  onChange={() => handleFilterChange('colors', color)}
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                />
-                <label htmlFor={`color-${color}`} className="ml-2 text-gray-700">
+          <div className="relative">
+            <select
+              value={filters.colors[0] || ''}
+              onChange={(e) => handleFilterChange('colors', e.target.value ? [e.target.value] : [])}
+              className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="">All Colors</option>
+              {allColors.map(color => (
+                <option key={color} value={color}>
                   {color}
-                </label>
-              </div>
-            ))}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
         </div>
         
@@ -383,54 +377,21 @@ function ProductsPage() {
         {/* Sort By - Mobile Only */}
         <div className="lg:hidden">
           <h3 className="text-lg font-medium mb-3">Sort By</h3>
-          <div className="space-y-2">
-            <div className="flex items-center">
-              <input
-                id="sort-default"
-                type="radio"
-                checked={filters.sortBy === 'default'}
-                onChange={() => handleFilterChange('sortBy', 'default')}
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-              />
-              <label htmlFor="sort-default" className="ml-2 text-gray-700">
-                Featured
-              </label>
-            </div>
-            <div className="flex items-center">
-              <input
-                id="sort-price-asc"
-                type="radio"
-                checked={filters.sortBy === 'price-asc'}
-                onChange={() => handleFilterChange('sortBy', 'price-asc')}
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-              />
-              <label htmlFor="sort-price-asc" className="ml-2 text-gray-700">
-                Price: Low to High
-              </label>
-            </div>
-            <div className="flex items-center">
-              <input
-                id="sort-price-desc"
-                type="radio"
-                checked={filters.sortBy === 'price-desc'}
-                onChange={() => handleFilterChange('sortBy', 'price-desc')}
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-              />
-              <label htmlFor="sort-price-desc" className="ml-2 text-gray-700">
-                Price: High to Low
-              </label>
-            </div>
-            <div className="flex items-center">
-              <input
-                id="sort-newest"
-                type="radio"
-                checked={filters.sortBy === 'newest'}
-                onChange={() => handleFilterChange('sortBy', 'newest')}
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-              />
-              <label htmlFor="sort-newest" className="ml-2 text-gray-700">
-                Newest
-              </label>
+          <div className="relative">
+            <select
+              value={filters.sortBy}
+              onChange={(e) => handleFilterChange('sortBy', e.target.value)}
+              className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="default">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
           </div>
         </div>
