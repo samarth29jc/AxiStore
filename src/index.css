@@ -66,4 +66,48 @@
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
+  
+  /* Image Enhancements */
+  .product-image {
+    @apply transition-transform duration-500 ease-in-out;
+  }
+  
+  .product-image:hover {
+    @apply scale-105;
+  }
+  
+  .category-image {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  
+  .category-image:hover {
+    @apply scale-110 brightness-110;
+  }
+  
+  .banner-image {
+    @apply transition-all duration-700 ease-in-out;
+  }
+  
+  .banner-image:hover {
+    @apply scale-105;
+  }
+  
+  /* Image Loading Animation */
+  .image-loading {
+    @apply animate-pulse bg-gray-200;
+  }
+  
+  /* Image Container */
+  .image-container {
+    @apply relative overflow-hidden rounded-lg;
+  }
+  
+  .image-container::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .image-container:hover::after {
+    @apply opacity-100;
+  }
 }

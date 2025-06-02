@@ -29,7 +29,7 @@ function HomePage() {
   const banners = [
     {
       id: 1,
-      image: "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       title: "Luxury Fashion Collection",
       description: "Experience elegance and sophistication with our premium collection",
       buttonText: "Explore Collection",
@@ -37,7 +37,7 @@ function HomePage() {
     },
     {
       id: 2,
-      image: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       title: "Summer Essentials",
       description: "Discover the perfect blend of style and comfort",
       buttonText: "Shop Now",
@@ -45,7 +45,7 @@ function HomePage() {
     },
     {
       id: 3,
-      image: "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       title: "Exclusive Deals",
       description: "Limited time offers on premium fashion items",
       buttonText: "View Deals",
@@ -58,19 +58,19 @@ function HomePage() {
     {
       id: 1,
       name: "Women's Fashion",
-      image: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       link: "/products/women"
     },
     {
       id: 2,
       name: "Men's Collection",
-      image: "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       link: "/products/men"
     },
     {
       id: 3,
       name: "Accessories",
-      image: "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       link: "/products/accessories"
     }
   ];
@@ -83,7 +83,7 @@ function HomePage() {
           {banners.map((banner) => (
             <div key={banner.id} className="relative h-[500px]">
               <div 
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center banner-image"
                 style={{ backgroundImage: `url(${banner.image})` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
@@ -156,7 +156,7 @@ function HomePage() {
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="category-image w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6">
                   <div className="text-white">

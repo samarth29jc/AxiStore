@@ -26,12 +26,12 @@ function ProductCard({ product }) {
       className="group card"
     >
       <Link to={`/product/${id}`} className="block">
-        <div className="relative overflow-hidden aspect-[3/4]">
+        <div className="image-container">
           {/* Product Image */}
           <img 
             src={images[0]} 
             alt={name}
-            className="w-full h-full object-cover transition-transform duration-700 scale-100"
+            className="product-image w-full h-full object-cover"
           />
           
           {/* Quick Actions */}
