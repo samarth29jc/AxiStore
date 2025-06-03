@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { products, categories } from '../data/products';
 import ProductCard from '../components/common/ProductCard';
+import { motion } from 'framer-motion';
 
 function ProductsPage() {
   const { category } = useParams();
@@ -102,8 +103,10 @@ function ProductsPage() {
         });
         break;
       case 'newest':
-        // For demo purposes, we'll just use product ID as a proxy for "newest"
         result.sort((a, b) => b.id - a.id);
+        break;
+      case 'rating':
+        result.sort((a, b) => b.rating - a.rating);
         break;
       default:
         // Default sorting logic (by bestseller, then by name)
@@ -121,8 +124,14 @@ function ProductsPage() {
   // Handle filter changes
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => {
+      if ((filterType === 'colors' || filterType === 'sizes') && Array.isArray(value)) {
+        return {
+          ...prev,
+          [filterType]: value
+        };
+      }
+  
       if (filterType === 'colors' || filterType === 'sizes') {
-        // Toggle selection for array filters
         const currentValues = prev[filterType];
         return {
           ...prev,
@@ -131,13 +140,14 @@ function ProductsPage() {
             : [...currentValues, value]
         };
       }
-      
+  
       return {
         ...prev,
         [filterType]: value
       };
     });
   };
+  
 
   return (
     <div className="pt-24 pb-16"> {/* Offset for fixed header */}
@@ -157,82 +167,27 @@ function ProductsPage() {
           </p>
         </div>
 
-        {/* Mobile Filters Button */}
-        <div className="lg:hidden mb-4">
-          <button
-            onClick={() => setIsMobileFiltersOpen(true)}
-            className="w-full py-2 px-4 border border-gray-300 rounded-md flex items-center justify-center gap-2 bg-white text-gray-800"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
-            </svg>
-            Filter & Sort
-          </button>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Filters Sidebar - Desktop */}
-          <div className="hidden lg:block w-64 flex-shrink-0">
-            {renderFilters()}
-          </div>
-
-          {/* Filters Modal - Mobile */}
-          <div
-            className={`fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out ${
-              isMobileFiltersOpen ? 'translate-x-0' : '-translate-x-full'
-            } lg:hidden`}
-          >
-            {/* Overlay */}
-            <div 
-              className="absolute inset-0 bg-black bg-opacity-50"
-              onClick={() => setIsMobileFiltersOpen(false)}
-            ></div>
-            
-            {/* Filters Content */}
-            <div className="absolute top-0 left-0 w-full max-w-xs h-full bg-white shadow-xl flex flex-col">
-              <div className="flex items-center justify-between p-4 border-b">
-                <h2 className="text-xl font-bold text-gray-800">Filters</h2>
-                <button
-                  onClick={() => setIsMobileFiltersOpen(false)}
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              
-              <div className="flex-1 overflow-y-auto p-4">
-                {renderFilters()}
-              </div>
-              
-              <div className="p-4 border-t">
-                <button
-                  onClick={() => setIsMobileFiltersOpen(false)}
-                  className="w-full btn-primary"
-                >
-                  Apply Filters
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Products Grid */}
-          <div className="flex-1">
-            {/* Sort Dropdown - Desktop */}
-            <div className="hidden lg:flex justify-end mb-6">
+        {/* Filters Bar */}
+        <div className="bg-white rounded-lg shadow-sm p-4 mb-8">
+          <div className="flex flex-wrap gap-4">
+            {/* Category Dropdown */}
+            <div className="flex-1 min-w-[200px]">
+              <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 mb-1">
+                Category
+              </label>
               <div className="relative">
-                <label htmlFor="sort-by" className="mr-2">Sort by:</label>
                 <select
-                  id="sort-by"
-                  value={filters.sortBy}
-                  onChange={(e) => handleFilterChange('sortBy', e.target.value)}
-                  className="appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  id="category-filter"
+                  value={filters.category}
+                  onChange={(e) => handleFilterChange('category', e.target.value)}
+                  className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
                 >
-                  <option value="default">Featured</option>
-                  <option value="price-asc">Price: Low to High</option>
-                  <option value="price-desc">Price: High to Low</option>
-                  <option value="newest">Newest</option>
+                  <option value="all">All Categories</option>
+                  {categories.map(cat => (
+                    <option key={cat.id} value={cat.id}>
+                      {cat.name} ({cat.count})
+                    </option>
+                  ))}
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,162 +197,135 @@ function ProductsPage() {
               </div>
             </div>
 
-            {/* Products Grid */}
-            {filteredProducts.length === 0 ? (
-              <div className="text-center py-12">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-16 h-16 mx-auto text-gray-300 mb-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-                <h3 className="text-xl font-medium text-gray-800 mb-2">No products found</h3>
-                <p className="text-gray-600">
-                  Try adjusting your filters or search term.
-                </p>
+            {/* Color Filter */}
+            <div className="flex-1 min-w-[200px]">
+              <label htmlFor="color-filter" className="block text-sm font-medium text-gray-700 mb-1">
+                Color
+              </label>
+              <div className="relative">
+                <select
+                  id="color-filter"
+                  value={filters.colors[0] || ''}
+                  onChange={(e) => handleFilterChange('colors', e.target.value ? [e.target.value] : [])}
+                  className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                >
+                  <option value="">All Colors</option>
+                  {allColors.map(color => (
+                    <option key={color} value={color}>
+                      {color}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {filteredProducts.map(product => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
+            </div>
+
+            {/* Size Filter */}
+            <div className="flex-1 min-w-[200px]">
+              <label htmlFor="size-filter" className="block text-sm font-medium text-gray-700 mb-1">
+                Size
+              </label>
+              <div className="relative">
+                <select
+                  id="size-filter"
+                  value={filters.sizes[0] || ''}
+                  onChange={(e) => handleFilterChange('sizes', e.target.value ? [e.target.value] : [])}
+                  className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                >
+                  <option value="">All Sizes</option>
+                  {allSizes.map(size => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </div>
-            )}
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="flex-1 min-w-[200px]">
+              <label htmlFor="sort-by" className="block text-sm font-medium text-gray-700 mb-1">
+                Sort By
+              </label>
+              <div className="relative">
+                <select
+                  id="sort-by"
+                  value={filters.sortBy}
+                  onChange={(e) => handleFilterChange('sortBy', e.target.value)}
+                  className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                >
+                  <option value="default">Featured</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="newest">Newest</option>
+                  <option value="rating">Top Rated</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* Price Range Slider */}
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Price Range: ${filters.priceRange[0]} - ${filters.priceRange[1]}
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="300"
+              step="10"
+              value={filters.priceRange[1]}
+              onChange={(e) => handleFilterChange('priceRange', [filters.priceRange[0], parseInt(e.target.value)])}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+            />
+          </div>
+        </div>
+
+        {/* Products Grid */}
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          {filteredProducts.length === 0 ? (
+            <div className="text-center py-12">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-16 h-16 mx-auto text-gray-300 mb-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+              <h3 className="text-xl font-medium text-gray-800 mb-2">No products found</h3>
+              <p className="text-gray-600">
+                Try adjusting your filters or search term.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredProducts.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <ProductCard product={product} />
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-
-  function renderFilters() {
-    return (
-      <div className="space-y-6">
-        {/* Categories Filter */}
-        <div>
-          <h3 className="text-lg font-medium mb-3">Categories</h3>
-          <div className="relative">
-            <select
-              value={filters.category}
-              onChange={(e) => handleFilterChange('category', e.target.value)}
-              className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
-            >
-              <option value="all">All Categories</option>
-              {categories.map(cat => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.name} ({cat.count})
-                </option>
-              ))}
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        
-        {/* Price Range Filter */}
-        <div>
-          <h3 className="text-lg font-medium mb-3">Price Range</h3>
-          <div className="space-y-4">
-            <div className="flex justify-between">
-              <span>${filters.priceRange[0]}</span>
-              <span>${filters.priceRange[1]}</span>
-            </div>
-            <div className="flex space-x-4">
-              <select
-                value={filters.priceRange[0]}
-                onChange={(e) => handleFilterChange('priceRange', [parseInt(e.target.value), filters.priceRange[1]])}
-                className="input-field text-sm"
-              >
-                <option value="0">$0</option>
-                <option value="50">$50</option>
-                <option value="100">$100</option>
-                <option value="150">$150</option>
-                <option value="200">$200</option>
-              </select>
-              <span className="self-center">to</span>
-              <select
-                value={filters.priceRange[1]}
-                onChange={(e) => handleFilterChange('priceRange', [filters.priceRange[0], parseInt(e.target.value)])}
-                className="input-field text-sm"
-              >
-                <option value="50">$50</option>
-                <option value="100">$100</option>
-                <option value="150">$150</option>
-                <option value="200">$200</option>
-                <option value="300">$300+</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        
-        {/* Colors Filter */}
-        <div>
-          <h3 className="text-lg font-medium mb-3">Colors</h3>
-          <div className="relative">
-            <select
-              value={filters.colors[0] || ''}
-              onChange={(e) => handleFilterChange('colors', e.target.value ? [e.target.value] : [])}
-              className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
-            >
-              <option value="">All Colors</option>
-              {allColors.map(color => (
-                <option key={color} value={color}>
-                  {color}
-                </option>
-              ))}
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        
-        {/* Sizes Filter */}
-        <div>
-          <h3 className="text-lg font-medium mb-3">Sizes</h3>
-          <div className="space-y-2">
-            {allSizes.map(size => (
-              <div key={size} className="flex items-center">
-                <input
-                  id={`size-${size}`}
-                  type="checkbox"
-                  checked={filters.sizes.includes(size)}
-                  onChange={() => handleFilterChange('sizes', size)}
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                />
-                <label htmlFor={`size-${size}`} className="ml-2 text-gray-700">
-                  {size}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Sort By - Mobile Only */}
-        <div className="lg:hidden">
-          <h3 className="text-lg font-medium mb-3">Sort By</h3>
-          <div className="relative">
-            <select
-              value={filters.sortBy}
-              onChange={(e) => handleFilterChange('sortBy', e.target.value)}
-              className="w-full appearance-none bg-white border border-gray-300 rounded-md py-2 pl-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
-            >
-              <option value="default">Featured</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="newest">Newest</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
 
 export default ProductsPage;
