@@ -16,9 +16,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      "https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+      "https://www.botnia.in/cdn/shop/files/sweatshirt_11decb92-8c64-4ac6-8105-472834c72015.png?v=1735550510&width=3000",
+      "https://www.botnia.in/cdn/shop/files/sweatshirt_11decb92-8c64-4ac6-8105-472834c72015.png?v=1735550510&width=3000",
+      "https://www.botnia.in/cdn/shop/files/sweatshirt_11decb92-8c64-4ac6-8105-472834c72015.png?v=1735550510&width=3000"
     ],
     rating: 4.8,
     reviewCount: 124,
@@ -43,9 +43,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      "https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+      "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/404168/pexels-photo-404168.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983463/pexels-photo-2983463.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     rating: 4.6,
     reviewCount: 89,
@@ -70,9 +70,7 @@ const products = [
       "Dry clean only"
     ],
     images: [
-      "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      "https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+      "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTaYnkptnMqocFS4MW3BKIMQdsaZJ8vE6utXKmX8SDlONA1M1SOZ6DY0gAzLEKhPGtVJEEaseehKL726MA9y3ZVW7quUK37HcCfwsFCD1qkNXdHObYK0nVjEA"
     ],
     rating: 4.9,
     reviewCount: 46,
@@ -97,9 +95,9 @@ const products = [
       "Dry clean only"
     ],
     images: [
-      "https://images.pexels.com/photos/6626903/pexels-photo-6626903.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6626967/pexels-photo-6626967.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6626963/pexels-photo-6626963.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/1707828/pexels-photo-1707828.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983460/pexels-photo-2983460.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     rating: 4.7,
     reviewCount: 62,
@@ -124,9 +122,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/6311381/pexels-photo-6311381.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6311379/pexels-photo-6311379.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6311604/pexels-photo-6311604.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983459/pexels-photo-2983459.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983458/pexels-photo-2983458.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     rating: 4.5,
     reviewCount: 78,
@@ -151,9 +149,9 @@ const products = [
       "Professional leather clean"
     ],
     images: [
-      "https://images.pexels.com/photos/6765028/pexels-photo-6765028.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6765025/pexels-photo-6765025.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6764950/pexels-photo-6764950.jpeg?auto=compress&cs=tinysrgb&w=800"
+ "https://i.pinimg.com/736x/74/33/4f/74334f4ef8d8f05a1b0fd0ecbf89b5b4.jpg",
+      "https://i.pinimg.com/736x/74/33/4f/74334f4ef8d8f05a1b0fd0ecbf89b5b4.jpg",
+      "https://i.pinimg.com/736x/74/33/4f/74334f4ef8d8f05a1b0fd0ecbf89b5b4.jpg"
     ],
     rating: 4.8,
     reviewCount: 32,
@@ -178,9 +176,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/4066296/pexels-photo-4066296.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/5717684/pexels-photo-5717684.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/5717656/pexels-photo-5717656.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://images.pexels.com/photos/2983454/pexels-photo-2983454.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983453/pexels-photo-2983453.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983452/pexels-photo-2983452.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     rating: 4.6,
     reviewCount: 95,
@@ -205,9 +203,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/4498285/pexels-photo-4498285.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/4761779/pexels-photo-4761779.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/4761663/pexels-photo-4761663.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://preview.redd.it/shorts-sweatpants-like-the-ones-arnold-is-wearing-v0-gq7oxtz3tlic1.jpeg?auto=webp&s=7265d7d63475122a819f1eb510a2abf62fa36e68",
+      "https://images.pexels.com/photos/2983451/pexels-photo-2983451.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983450/pexels-photo-2983450.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     rating: 4.5,
     reviewCount: 68,
@@ -232,9 +230,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6311386/pexels-photo-6311386.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6311471/pexels-photo-6311471.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://images.pexels.com/photos/2983449/pexels-photo-2983449.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983448/pexels-photo-2983448.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/2983447/pexels-photo-2983447.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     rating: 4.7,
     reviewCount: 52,
@@ -259,15 +257,15 @@ const products = [
       "Dry clean only"
     ],
     images: [
-      "https://images.pexels.com/photos/6766391/pexels-photo-6766391.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6766267/pexels-photo-6766267.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6766269/pexels-photo-6766269.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://media.licdn.com/dms/image/v2/D4D03AQHoepjdA_IW9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685186073080?e=1754524800&v=beta&t=bPlgrt8DYJWeYH3QafI4wseP0B0zNNBOHXSB8CpAses",
+      "https://media.licdn.com/dms/image/v2/D4D03AQHoepjdA_IW9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685186073080?e=1754524800&v=beta&t=bPlgrt8DYJWeYH3QafI4wseP0B0zNNBOHXSB8CpAses",
+      "https://media.licdn.com/dms/image/v2/D4D03AQHoepjdA_IW9Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685186073080?e=1754524800&v=beta&t=bPlgrt8DYJWeYH3QafI4wseP0B0zNNBOHXSB8CpAses"
     ],
     rating: 4.9,
     reviewCount: 38,
     inStock: true,
     isNew: false,
-    isBestseller: true
+    isBestseller: false
   },
   {
     id: 11,
@@ -286,9 +284,9 @@ const products = [
       "Machine washable"
     ],
     images: [
-      "https://images.pexels.com/photos/5384424/pexels-photo-5384424.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6311574/pexels-photo-6311574.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/6311151/pexels-photo-6311151.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://www.botnia.in/cdn/shop/files/sweatshirt_11decb92-8c64-4ac6-8105-472834c72015.png?v=1735550510&width=3000",
+      "https://www.botnia.in/cdn/shop/files/sweatshirt_11decb92-8c64-4ac6-8105-472834c72015.png?v=1735550510&width=3000",
+      "https://www.botnia.in/cdn/shop/files/sweatshirt_11decb92-8c64-4ac6-8105-472834c72015.png?v=1735550510&width=3000"
     ],
     rating: 4.3,
     reviewCount: 42,
@@ -322,19 +320,209 @@ const products = [
     inStock: true,
     isNew: false,
     isBestseller: false
+  },
+  {
+    id: 13,
+    name: "Premium Denim Jacket",
+    category: "jackets",
+    price: 129.99,
+    discountPrice: 99.99,
+    colors: ["Blue", "Black", "Light Wash"],
+    sizes: ["S", "M", "L", "XL"],
+    description: "Classic denim jacket with modern details. Perfect for layering in any season.",
+    details: [
+      "100% cotton denim",
+      "Button closure",
+      "Multiple pockets",
+      "Adjustable cuffs",
+      "Machine washable"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+    ],
+    rating: 4.7,
+    reviewCount: 89,
+    inStock: true,
+    isNew: true,
+    isBestseller: false
+  },
+  {
+    id: 14,
+    name: "Casual Button-Up Shirt",
+    category: "shirts",
+    price: 49.99,
+    discountPrice: 39.99,
+    colors: ["White", "Blue", "Black"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Versatile button-up shirt perfect for both casual and semi-formal occasions.",
+    details: [
+      "100% cotton",
+      "Button-down collar",
+      "Chest pocket",
+      "Regular fit",
+      "Machine washable"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+    ],
+    rating: 4.4,
+    reviewCount: 92,
+    inStock: true,
+    isNew: false,
+    isBestseller: false
+  },
+  {
+    id: 15,
+    name: "Athletic Performance Shorts",
+    category: "shorts",
+    price: 39.99,
+    discountPrice: 29.99,
+    colors: ["Black", "Gray", "Navy"],
+    sizes: ["S", "M", "L", "XL"],
+    description: "High-performance athletic shorts designed for maximum comfort during workouts.",
+    details: [
+      "92% polyester, 8% spandex",
+      "Quick-dry fabric",
+      "Elastic waistband",
+      "Side pockets",
+      "Machine washable"
+    ],
+    images: [
+      "https://preview.redd.it/shorts-sweatpants-like-the-ones-arnold-is-wearing-v0-gq7oxtz3tlic1.jpeg?auto=webp&s=7265d7d63475122a819f1eb510a2abf62fa36e68",
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+    ],
+    rating: 4.7,
+    reviewCount: 156,
+    inStock: true,
+    isNew: true,
+    isBestseller: true
+  },
+  {
+    id: 16,
+    name: "Premium Wool Sweater",
+    category: "sweaters",
+    price: 89.99,
+    discountPrice: 69.99,
+    colors: ["Cream", "Gray", "Navy"],
+    sizes: ["S", "M", "L", "XL"],
+    description: "Luxurious wool sweater with a modern fit. Perfect for staying warm in style.",
+    details: [
+      "80% wool, 20% cashmere",
+      "Crew neck",
+      "Ribbed cuffs and hem",
+      "Regular fit",
+      "Dry clean only"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+    ],
+    rating: 4.8,
+    reviewCount: 124,
+    inStock: true,
+    isNew: true,
+    isBestseller: false
+  },
+  {
+    id: 17,
+    name: "Designer Hoodie",
+    category: "hoodies",
+    price: 79.99,
+    discountPrice: 59.99,
+    colors: ["Black", "Gray", "Navy"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Premium quality hoodie with modern design elements and comfortable fit.",
+    details: [
+      "80% cotton, 20% polyester",
+      "Kangaroo pocket",
+      "Drawstring hood",
+      "Ribbed cuffs and hem",
+      "Machine washable"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+    ],
+    rating: 4.6,
+    reviewCount: 98,
+    inStock: true,
+    isNew: false,
+    isBestseller: true
+  },
+  {
+    id: 60,
+    name: "Designer Handbag",
+    category: "accessories",
+    price: 299.99,
+    discountPrice: 249.99,
+    colors: ["Black", "Brown", "Beige"],
+    sizes: ["One Size"],
+    description: "Luxurious designer handbag with premium leather and gold-tone hardware.",
+    details: [
+      "Genuine leather",
+      "Gold-tone hardware",
+      "Adjustable strap",
+      "Multiple compartments",
+      "Professional clean only"
+    ],
+    images: [
+      "https://www.timeinternational.co.id/wp-content/uploads/SYDNEY-SWEENEY-TB-ELLA-BIO.jpg",
+      "https://www.timeinternational.co.id/wp-content/uploads/SYDNEY-SWEENEY-TB-ELLA-BIO-600x338.jpg",
+      "https://www.timeinternational.co.id/wp-content/uploads/SYDNEY-SWEENEY-TB-ELLA-BIO-960x540.jpg"
+    ],
+    rating: 4.9,
+    reviewCount: 156,
+    inStock: true,
+    isNew: false,
+    isBestseller: true
+  },
+  {
+    id: 61,
+    name: "Vintage Denim Jacket",
+    category: "jackets",
+    price: 89.99,
+    discountPrice: 69.99,
+    colors: ["Light Wash", "Dark Wash"],
+    sizes: ["S", "M", "L", "XL"],
+    description: "Classic vintage-style denim jacket with distressed details. Perfect for casual layering.",
+    details: [
+      "100% cotton denim",
+      "Button closure",
+      "Multiple pockets",
+      "Distressed finish",
+      "Machine washable"
+    ],
+    images: [
+      "https://images.pexels.com/photos/6311387/pexels-photo-6311387.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      "https://images.pexels.com/photos/6311382/pexels-photo-6311382.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+    ],
+    rating: 4.6,
+    reviewCount: 78,
+    inStock: true,
+    isNew: true,
+    isBestseller: false
   }
 ];
 
 const categories = [
-  { id: "tshirts", name: "T-Shirts", count: 2 },
-  { id: "shirts", name: "Shirts", count: 1 },
-  { id: "pants", name: "Pants", count: 2 },
-  { id: "shorts", name: "Shorts", count: 1 },
-  { id: "sweaters", name: "Sweaters", count: 1 },
-  { id: "hoodies", name: "Hoodies", count: 1 },
-  { id: "jackets", name: "Jackets", count: 2 },
-  { id: "dresses", name: "Dresses", count: 1 },
-  { id: "outerwear", name: "Outerwear", count: 1 }
+  { id: "tshirts", name: "T-Shirts", count: 8 },
+  { id: "shirts", name: "Shirts", count: 6 },
+  { id: "pants", name: "Pants", count: 7 },
+  { id: "shorts", name: "Shorts", count: 5 },
+  { id: "sweaters", name: "Sweaters", count: 6 },
+  { id: "hoodies", name: "Hoodies", count: 4 },
+  { id: "jackets", name: "Jackets", count: 8 },
+  { id: "dresses", name: "Dresses", count: 6 },
+  { id: "outerwear", name: "Outerwear", count: 5 },
+  { id: "accessories", name: "Accessories", count: 5 }
 ];
 
 export { products, categories };

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 import { useWishlist } from '../../contexts/WishlistContext';
+import { products } from '../../data/products';
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
@@ -26,7 +27,7 @@ function ProductCard({ product }) {
       className="group card"
     >
       <Link to={`/product/${id}`} className="block">
-        <div className="image-container">
+        <div className="relative overflow-hidden rounded-t-lg aspect-[4/5] bg-gray-100">
           {/* Product Image */}
           <img 
             src={images[0]} 
@@ -36,9 +37,9 @@ function ProductCard({ product }) {
           
           {/* Quick Actions */}
           <div 
-            className="absolute inset-0 bg-black bg-opacity-5 flex items-end justify-center opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-black bg-opacity-5 flex items-end justify-center opacity-100 transition-opacity duration-300 pointer-events-none"
           >
-            <div className="flex gap-2 mb-4">
+            <div className="flex gap-2 mb-4 pointer-events-auto">
               <button
                 onClick={handleAddToCart}
                 className="bg-white text-gray-900 hover:bg-primary-600 hover:text-white rounded-full p-2 shadow-md transition-colors duration-200"
@@ -75,16 +76,6 @@ function ProductCard({ product }) {
             {isNew && (
               <span className="bg-primary-600 text-white text-xs font-medium px-2 py-1 rounded">
                 New
-              </span>
-            )}
-            {isBestseller && (
-              <span className="bg-accent-500 text-white text-xs font-medium px-2 py-1 rounded">
-                Bestseller
-              </span>
-            )}
-            {discountPrice && (
-              <span className="bg-red-500 text-white text-xs font-medium px-2 py-1 rounded">
-                Sale
               </span>
             )}
           </div>

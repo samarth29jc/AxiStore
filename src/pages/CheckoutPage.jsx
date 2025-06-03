@@ -1,3 +1,8 @@
+
+// Email: user@example.com
+// Password: password
+
+
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';

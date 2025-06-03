@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState } from 'react';
+
+import image from '../assets/WhatsApp Image 2025-06-02 at 17.48.00_fc15359a.jpg';
+
 
 function HomePage() {
   // Get bestsellers
@@ -29,7 +33,7 @@ function HomePage() {
   const banners = [
     {
       id: 1,
-      image: "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      image: "https://cdn.dribbble.com/userupload/36303342/file/original-4e0e24e5a6295c4376c8b7a921bfdad6.jpg?resize=752x&vertical=center",
       title: "Luxury Fashion Collection",
       description: "Experience elegance and sophistication with our premium collection",
       buttonText: "Explore Collection",
@@ -45,7 +49,7 @@ function HomePage() {
     },
     {
       id: 3,
-      image: "https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      image: "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
       title: "Exclusive Deals",
       description: "Limited time offers on premium fashion items",
       buttonText: "View Deals",
@@ -57,15 +61,15 @@ function HomePage() {
   const featuredCategories = [
     {
       id: 1,
-      name: "Women's Fashion",
-      image: "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      link: "/products/women"
+      name: "Shirts",
+      image: "https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=256 256w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=264 264w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=384 384w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=396 396w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=564 564w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=657 657w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=768 768w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=820 820w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=1260 1260w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=1536 1536w, https://image.hm.com/assets/hm/89/54/89545c7aee1f83b8e8b9174c0287cdf5068ddb2e.jpg?imwidth=2160 2160w",
+      link: "/products/shirts"
     },
     {
       id: 2,
-      name: "Men's Collection",
-      image: "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
-      link: "/products/men"
+      name: "Jackets",
+      image: "//www.bonkerscorner.com/cdn/shop/files/Bonkerscorner__Bugs__Funky__Varsity__Jacket_8.jpg?v=1734589450",
+      link: "/products/jackets"
     },
     {
       id: 3,
@@ -75,12 +79,18 @@ function HomePage() {
     }
   ];
 
+  const [currentBanner, setCurrentBanner] = useState(0);
+
   return (
     <div className="pt-16"> {/* Offset for fixed header */}
       {/* Hero Banner with Slider */}
       <section className="relative">
-        <Slider {...bannerSettings} className="banner-slider">
-          {banners.map((banner) => (
+        <Slider
+          {...bannerSettings}
+          className="banner-slider"
+          beforeChange={(_, next) => setCurrentBanner(next)}
+        >
+          {banners.map((banner, idx) => (
             <div key={banner.id} className="relative h-[500px]">
               <div 
                 className="absolute inset-0 bg-cover bg-center banner-image"
@@ -88,43 +98,43 @@ function HomePage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
               </div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="container-custom h-full flex items-center"
-              >
-                <div className="text-white max-w-xl">
-                  <motion.h1 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl font-bold mb-4"
-                  >
-                    {banner.title}
-                  </motion.h1>
-                  <motion.p 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg mb-6 text-gray-200"
-                  >
-                    {banner.description}
-                  </motion.p>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                  >
-                    <a 
-                      href={banner.buttonLink}
-                      className="btn-primary text-base px-6 py-3 hover:scale-105 transition-transform duration-300"
+              {/* Always render the content, but only show/animate the active one */}
+              <div className={`absolute inset-0 flex items-center ${currentBanner === idx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'} transition-opacity duration-700`}>
+                <div className="container-custom">
+                  <div className="text-white max-w-xl">
+                    <motion.h1 
+                      initial={false}
+                      animate={currentBanner === idx ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.8, delay: currentBanner === idx ? 0.3 : 0, type: 'spring', stiffness: 100 }}
+                      className="text-4xl font-bold mb-4"
                     >
-                      {banner.buttonText}
-                    </a>
-                  </motion.div>
+                      {banner.title}
+                    </motion.h1>
+                    <motion.p 
+                      initial={false}
+                      animate={currentBanner === idx ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.8, delay: currentBanner === idx ? 0.5 : 0, type: 'spring', stiffness: 100 }}
+                      className="text-lg mb-6 text-gray-200"
+                    >
+                      {banner.description}
+                    </motion.p>
+                    <motion.div
+                      initial={false}
+                      animate={currentBanner === idx ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.8, delay: currentBanner === idx ? 0.7 : 0, type: 'spring', stiffness: 100 }}
+                    >
+                      <motion.a 
+                        href={banner.buttonLink}
+                        className="btn-primary text-base px-6 py-3 inline-block"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {banner.buttonText}
+                      </motion.a>
+                    </motion.div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           ))}
         </Slider>

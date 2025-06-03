@@ -10,9 +10,11 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
 import NotFoundPage from './pages/NotFoundPage'
+import AboutUsPage from './pages/AboutUsPage'
 import { ScrollToTop } from './components/utils/ScrollToTop'
 
 function App() {
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -28,6 +30,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/about" element={<AboutUsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
