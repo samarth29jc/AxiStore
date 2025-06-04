@@ -33,14 +33,14 @@ function Header() {
         isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom flex items-center justify-between ">
         {/* Logo */}
         <Link to="/" className="text-2xl font-serif font-bold text-primary-950">
           AxiStore
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center pl-[230px] space-x-10 font-semibold">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/products" className="nav-link">Products</Link>
           <Link to="/about" className="nav-link">About Us</Link>

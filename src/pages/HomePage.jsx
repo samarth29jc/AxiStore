@@ -101,7 +101,7 @@ function HomePage() {
               {/* Always render the content, but only show/animate the active one */}
               <div className={`absolute inset-0 flex items-center ${currentBanner === idx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'} transition-opacity duration-700`}>
                 <div className="container-custom">
-                  <div className="text-white max-w-xl">
+                  <div className="text-white max-w-xl pl-[75px]">
                     <motion.h1 
                       initial={false}
                       animate={currentBanner === idx ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

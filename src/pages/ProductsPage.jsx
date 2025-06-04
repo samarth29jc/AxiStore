@@ -21,7 +21,7 @@ function ProductsPage() {
   const [allColors, setAllColors] = useState([]);
   const [allSizes, setAllSizes] = useState([]);
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
-  
+  console.log("products", products)
   // Extract all available colors and sizes from products
   useEffect(() => {
     const colors = new Set();
