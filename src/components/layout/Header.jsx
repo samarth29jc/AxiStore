@@ -5,6 +5,8 @@ import { useAuth } from '../../contexts/AuthContext';
 import CartSidebar from '../cart/CartSidebar';
 import SearchBar from '../common/SearchBar';
 import MobileMenu from './MobileMenu';
+import penguine from '../../assets/image.png';
+
 
 function Header() {
   const { getCartCount, isCartOpen, toggleCart } = useCart();
@@ -36,8 +38,14 @@ function Header() {
       <div className="container-custom flex items-center justify-between ">
         {/* Logo */}
         <Link to="/" className="text-2xl font-serif font-bold text-primary-950">
-          AxiStore
+        <Link to="/" className="flex items-center space-x-2">
+  <img src={penguine} alt="Logo" className="w-10 h-10 object-contain rounded-sm" />
+  <span className="text-2xl font-serif font-bold text-primary-950">AxiStore</span>
+</Link>
+          
         </Link>
+        
+       
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center pl-[230px] space-x-10 font-semibold">

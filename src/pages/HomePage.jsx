@@ -33,7 +33,7 @@ function HomePage() {
   const banners = [
     {
       id: 1,
-      image: "https://cdn.dribbble.com/userupload/36303342/file/original-4e0e24e5a6295c4376c8b7a921bfdad6.jpg?resize=752x&vertical=center",
+      video: "https://media.istockphoto.com/id/2159822155/video/casual-businessman-using-ai-search-engine-for-online-shopping.mp4?s=mp4-640x640-is&k=20&c=EY_KvUz8AD62JKjNxajSmW2EzDTVdCtsrJdl8oF_Z8k=",
       title: "Luxury Fashion Collection",
       description: "Experience elegance and sophistication with our premium collection",
       buttonText: "Explore Collection",
@@ -91,13 +91,28 @@ function HomePage() {
           beforeChange={(_, next) => setCurrentBanner(next)}
         >
           {banners.map((banner, idx) => (
-            <div key={banner.id} className="relative h-[500px]">
-              <div 
-                className="absolute inset-0 bg-cover bg-center banner-image"
-                style={{ backgroundImage: `url(${banner.image})` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
-              </div>
+            <div key={banner.id} className="relative h-screen">
+              {banner.video ? (
+                <div className="absolute inset-0 w-full h-full overflow-hidden">
+                  <video
+                    className="absolute min-w-full min-h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src={banner.video} type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+                </div>
+              ) : (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center banner-image"
+                  style={{ backgroundImage: `url(${banner.image})` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+                </div>
+              )}
               {/* Always render the content, but only show/animate the active one */}
               <div className={`absolute inset-0 flex items-center ${currentBanner === idx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'} transition-opacity duration-700`}>
                 <div className="container-custom">
@@ -106,7 +121,7 @@ function HomePage() {
                       initial={false}
                       animate={currentBanner === idx ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                       transition={{ duration: 0.8, delay: currentBanner === idx ? 0.3 : 0, type: 'spring', stiffness: 100 }}
-                      className="text-4xl font-bold mb-4"
+                      className="text-5xl font-bold mb-4"
                     >
                       {banner.title}
                     </motion.h1>
@@ -114,7 +129,7 @@ function HomePage() {
                       initial={false}
                       animate={currentBanner === idx ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                       transition={{ duration: 0.8, delay: currentBanner === idx ? 0.5 : 0, type: 'spring', stiffness: 100 }}
-                      className="text-lg mb-6 text-gray-200"
+                      className="text-xl mb-6 text-gray-200"
                     >
                       {banner.description}
                     </motion.p>
@@ -125,7 +140,7 @@ function HomePage() {
                     >
                       <motion.a 
                         href={banner.buttonLink}
-                        className="btn-primary text-base px-6 py-3 inline-block"
+                        className="btn-primary text-lg px-8 py-4 inline-block"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
