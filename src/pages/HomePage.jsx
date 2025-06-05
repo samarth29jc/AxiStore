@@ -33,7 +33,7 @@ function HomePage() {
   const banners = [
     {
       id: 1,
-      video: "https://media.istockphoto.com/id/2159822155/video/casual-businessman-using-ai-search-engine-for-online-shopping.mp4?s=mp4-640x640-is&k=20&c=EY_KvUz8AD62JKjNxajSmW2EzDTVdCtsrJdl8oF_Z8k=",
+      video: "https://media.istockphoto.com/id/1978219550/video/fashion-model-walking-towards-camera-fashionable-elegant-outfits-rapidly-changing-abstract.mp4?s=mp4-640x640-is&k=20&c=VJJHF6FujttbWzh5JmqTRndEGgyBnXMxCCvRwxJSfEU=",
       title: "Luxury Fashion Collection",
       description: "Experience elegance and sophistication with our premium collection",
       buttonText: "Explore Collection",

@@ -12,6 +12,7 @@ import ProfilePage from './pages/ProfilePage'
 import NotFoundPage from './pages/NotFoundPage'
 import AboutUsPage from './pages/AboutUsPage'
 import { ScrollToTop } from './components/utils/ScrollToTop'
+import TestimonyPage from './pages/TestimonyPage'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/testimony" element={<TestimonyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
