@@ -28,7 +28,7 @@ function TestimonyPage() {
         <div className="relative flex flex-col items-center justify-center w-full max-w-md mx-auto">
           <audio controls className="w-full">
             <source
-              src="https://framerusercontent.com/assets/s6Kcvm0lGpVdIimLMjrCJjPgd28.mp3"
+              src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
               type="audio/mpeg"
             />
             Your browser does not support the audio element.
